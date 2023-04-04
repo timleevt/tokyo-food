@@ -1,0 +1,42 @@
+.container {
+    border: 1px solid #d3d3d3;
+    border-bottom: 0px;
+    box-shadow: 0 0px 9px -12px rgba(0,0,0,.2);
+    padding: 8px;
+    font-family: 'Open Sans','Helvetica Neue',Helvetica,Arial,sans-serif;
+}
+
+.container:last-child {
+    border-bottom: 1px solid #d3d3d3;
+}
+
+.container:hover {
+    background-color: rgb(247, 249, 249);
+}
+
+.header {
+    display: flex;
+    gap: 8px;
+}
+
+.name {
+    font-weight: 700;
+    font-size: 22px;
+}
+
+.date {
+    display: block;
+    margin: auto 0px;
+    font-size: 16px;
+}
+
+.addressContainer {
+    display: flex;
+}
+
+
+.address {
+    display: block;
+    margin: auto 0px;
+    font-size: 13px;
+}

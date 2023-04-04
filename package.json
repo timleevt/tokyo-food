@@ -1,5 +1,5 @@
 {
-  "name": "tokyo-buzz",
+  "name": "tokyo-food",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -9,6 +9,12 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@emotion/react": "^11.10.6",
+    "@emotion/styled": "^11.10.6",
+    "@googlemaps/js-api-loader": "^1.15.1",
+    "@mui/icons-material": "^5.11.11",
+    "@mui/material": "^5.11.15",
+    "@react-google-maps/api": "^2.18.1",
     "@types/node": "18.15.11",
     "@types/react": "18.0.33",
     "@types/react-dom": "18.0.11",

@@ -1,0 +1,7 @@
+.container {
+    border-bottom: 1px solid #ebebeb;
+    padding: 12px 0px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
