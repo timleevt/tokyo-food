@@ -8,6 +8,9 @@ const theme = createTheme({
     primary: {
       main: "rgba(224,7,7,1)",
     },
+    info: {
+      main: "rgba(0, 0, 0, 0.87)",
+    }
   },
 });
 

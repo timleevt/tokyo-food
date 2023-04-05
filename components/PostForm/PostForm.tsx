@@ -3,13 +3,18 @@ import { Autocomplete } from "@react-google-maps/api";
 import Image from "next/image";
 import styles from "./PostForm.module.css";
 
-const PostForm = () => {
+type Props = {
+  handleClose: (close: boolean) => void
+}
+
+const PostForm = ({handleClose}: Props) => {
   const GOOGLE_MAPS_API_KEY = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY;
   if (!GOOGLE_MAPS_API_KEY) {
     return <></> ;
   }
   return (
     <div className={styles.container}>
+      <div> <a href="#" onClick={() => handleClose(false)}>X</a></div>
         <Autocomplete>
           <TextField fullWidth></TextField>
         </Autocomplete>

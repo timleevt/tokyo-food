@@ -21,17 +21,16 @@ export default function Home() {
       <main className={styles.main}>
         <Header />
         <div className={styles.contentContainer}>
-          {/* <PostForm /> */}
           <SearchBar changeHandler={setPostFilterText} />
           <PostContainer filterText={postFilterText}/>
         </div>
-        <div>
+        <div className={styles.mapContainer}>
           <Map />
         </div>
       </main>
-      {/* <footer className={styles.footer}>
-        about
-      </footer> */}
+      <footer className={styles.footer}>
+        <a className={styles.footerLink} href="/about">about</a>
+      </footer>
     </>
   )
 }

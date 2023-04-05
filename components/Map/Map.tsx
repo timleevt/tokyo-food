@@ -3,7 +3,8 @@ import styles from './Map.module.css';
 
 const containerStyle = {
   width: "100%",
-  height: "400px",
+  // height: "400px",
+  height: "40vh"
 };
 
 // Default coordinates to Tokyo Station
