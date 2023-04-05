@@ -10,6 +10,8 @@ import { useState } from 'react';
 export default function Home() {
 
   const [postFilterText, setPostFilterText] = useState('');
+  const [selectedPlace, setSelectedPlace] = useState<string | null>(null);
+
   return (
     <>
       <Head>
@@ -25,7 +27,7 @@ export default function Home() {
           <PostContainer filterText={postFilterText}/>
         </div>
         <div className={styles.mapContainer}>
-          <Map />
+          <Map currentLoc={selectedPlace}/>
         </div>
       </main>
       <footer className={styles.footer}>

@@ -5,9 +5,10 @@ import Modal from "../Modal/Modal";
 import PostForm from "../PostForm/PostForm";
 import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
 import AccountBoxOutlinedIcon from "@mui/icons-material/AccountBoxOutlined";
-import LoginOutlinedIcon from '@mui/icons-material/LoginOutlined';
+import LoginOutlinedIcon from "@mui/icons-material/LoginOutlined";
 import LogoutOutlinedIcon from "@mui/icons-material/LogoutOutlined";
-import ApprovalOutlinedIcon from '@mui/icons-material/ApprovalOutlined';
+import ApprovalOutlinedIcon from "@mui/icons-material/ApprovalOutlined";
+import AddIcon from "@mui/icons-material/Add";
 
 const Header = () => {
   // TODO: Handle Signin/Login feature
@@ -21,28 +22,27 @@ const Header = () => {
         </Modal>
       )}
       <header className={styles.header}>
-        <Link className={styles.logo} href="#">
-          TB
-        </Link>
+        <a className={styles.logoLink} href="#">
+          <div className={styles.logo}></div>
+        </a>
         <nav>
-          <a className={styles.navBtn} href="#">
+          <Link className={styles.navBtn} href="#">
             <HomeOutlinedIcon className={styles.navBtnIcon} />
             <div className={styles.navItemText}>Home</div>
-          </a>
+          </Link>
           {signedIn ? (
             <>
               <a className={styles.navBtn} href="#">
                 <AccountBoxOutlinedIcon className={styles.navBtnIcon} />
                 <div className={styles.navItemText}>Profile</div>
               </a>
-              <a className={styles.navBtn} href="#">
+              <a
+                className={styles.navBtn}
+                href="#"
+                onClick={() => setSignedIn(false)}
+              >
                 <LogoutOutlinedIcon className={styles.navBtnIcon} />
-                <div
-                  className={styles.navItemText}
-                  onClick={() => setSignedIn(false)}
-                >
-                  Logout
-                </div>
+                <div className={styles.navItemText}>Logout</div>
               </a>
               {/* <a href="#"> */}
               <div
@@ -50,20 +50,26 @@ const Header = () => {
                 onClick={() => setShowPostModal(true)}
               >
                 <a href="#" className={styles.postLink}>
-                  Post
+                  <span className={styles.postLinkTxt}>Post</span>
+                  <div className={styles.addIconWrapper}>
+                    <AddIcon
+                      className={styles.addIcon}
+                      style={{ height: "100%" }}
+                    />
+                  </div>
                 </a>
               </div>
               {/* </a> */}
             </>
           ) : (
             <>
-              <a className={styles.navBtn} href="#" onClick={() => setSignedIn(true)}>
-              <LoginOutlinedIcon className={styles.navBtnIcon} />
-                <div
-                  className={styles.navItemText}
-                >
-                  Login
-                </div>
+              <a
+                className={styles.navBtn}
+                href="#"
+                onClick={() => setSignedIn(true)}
+              >
+                <LoginOutlinedIcon className={styles.navBtnIcon} />
+                <div className={styles.navItemText}>Login</div>
               </a>
               <a className={styles.navBtn} href="#">
                 <ApprovalOutlinedIcon className={styles.navBtnIcon} />

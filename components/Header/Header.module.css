@@ -1,75 +1,114 @@
 .header {
   margin: 20px;
+  margin-top: 40px;
   /* border: 1px solid black; */
   font-family: "Poppins", "Helvetica Neue", Helvetica, Arial, sans-serif;
   display: flex;
+  gap: 16px;
   flex-direction: column;
 }
 
 @media screen and (max-width: 660px) {
-    .header {
-        display: none;
-    }
+  .header {
+    display: none;
+  }
+}
+
+.logoLink {
+  width: min-content;
 }
 
 .logo {
-  margin: 20px auto 20px 0px;
   display: block;
   font-size: 20px;
   text-decoration: none;
   border: 1px solid transparent;
   border-radius: 50%;
-  width: 25px;
-  height: 25px;
+  width: 55px;
+  height: 55px;
   padding: 8px;
-  background-color: rgba(224, 7, 7, 1);
-  color: white;
+  background-image: url(/images/logo.png);
+  background-position: center;
+  background-size: cover;
 }
 
 .navBtn {
-    display: flex;
-    gap: 8px;
-    text-decoration: none;
-    color: black;
-    margin-bottom: 8px;
-    border: 0px solid black;
-    border-radius: 9999px;
-    font-size: 20px;
-    padding: 12px;
-    width: min-content;
+  display: flex;
+  gap: 8px;
+  text-decoration: none;
+  color: black;
+  margin-bottom: 8px;
+  border: 0px solid black;
+  border-radius: 9999px;
+  font-size: 20px;
+  padding: 12px;
+  width: min-content;
 }
 
 .navBtn:hover {
-    background-color: rgba(15,20,25,0.1);
+  background-color: rgba(15, 20, 25, 0.1);
 }
 
 .navBtnIcon {
-    margin: auto 0px;
-    height: 26.25;
-    width: 26.25;
+  margin: auto 0px;
+  height: 26.25;
+  width: 26.25;
 }
 
 @media screen and (max-width: 1280px) {
-    .navItemText {
-        display: none;
-    }
+  .navItemText {
+    display: none;
+  }
 }
 
 .postBtn {
-    border: 0px solid black;
-    border-radius: 9999px;
-    font-size: 20px;
-    padding: 12px;
-    background-color: rgba(224,7,7,1);
-    text-align: center;
+  border: 0px solid black;
+  border-radius: 9999px;
+  font-size: 20px;
+  padding: 12px;
+  background-color: rgba(224, 7, 7, 1);
+  text-align: center;
 }
 
 .postBtn:hover {
-    background-color: rgba(156, 4, 4, 1);
-    cursor: pointer;
+  background-color: rgba(156, 4, 4, 1);
+  cursor: pointer;
+}
+
+.addIconWrapper {
+  display: none;
+}
+
+@media screen and (max-width: 1280px) {
+  .postBtn {
+    min-height: 43px;
+    min-width: 43px;
+    padding: 0;
+  }
+
+  .postLinkTxt {
+    display: none;
+  }
+
+  .addIconWrapper {
+    display: block;
+    height: 43px;
+  }
+
+  .logo {
+    height: 48px;
+    width: 48px;
+  }
+}
+
+@media screen and (max-width: 860px) {
+    .logo {
+        height: 40px;
+        width: 40px;
+      }
 }
 
 .postLink {
-    text-decoration: none;
-    color: white;
+  text-decoration: none;
+  color: white;
 }

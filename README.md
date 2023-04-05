@@ -7,10 +7,10 @@ npm run dev
 ```
 
 TODO:
-- complete modal
-- fix search bar
-- mobile formatting (in general)
-- navbar post button on smaller screen
 - mobile navbar (at bottom)
 - set map to location on click
 - backend
+- about/faq page
+- user signup
+- user profile
+- loadscript warning with googlemaps

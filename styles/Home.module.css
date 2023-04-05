@@ -7,7 +7,7 @@
 
 @media screen and (max-width: 1280px) {
   .main {
-    grid-template-columns: 10% 50% 50%;
+    grid-template-columns: 12% 48% 50%;
   }
 }
 
@@ -27,17 +27,11 @@
 
 @media screen and (max-width: 660px) {
   .main {
-    width: 90vw;
+    width: 100vw;
+    grid-template-columns: 95%;
   }
   .footer {
     display: none;
-  }
-}
-
-@media screen and (max-width: 660px) {
-  .main {
-    width: 100vw;
-    grid-template-columns: 100%;
   }
 }
 
