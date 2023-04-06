@@ -1,6 +1,7 @@
 .main {
-  display: grid;
-  grid-template-columns: 15% 45% 40%;
+  /* display: flex; */
+  /* display: grid;
+  grid-template-columns: 15% 45% 40%; */
   width: 60vw;
   margin: 0px auto 0px auto;
 }

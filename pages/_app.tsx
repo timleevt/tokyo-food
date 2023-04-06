@@ -1,6 +1,8 @@
 import "@/styles/globals.css";
 import type { AppProps } from "next/app";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
+import Header from "@/components/Header/Header";
+import Head from "next/head";
 
 const theme = createTheme({
   palette: {
@@ -16,6 +18,13 @@ const theme = createTheme({
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <ThemeProvider theme={theme}>
+      <Head>
+        <title>TB</title>
+        <meta name="description" content="Food recommendations by locals" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
+      <Header />
       <Component {...pageProps} />
     </ThemeProvider>
   );

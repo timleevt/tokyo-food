@@ -26,7 +26,7 @@ const Header = () => {
           <div className={styles.logo}></div>
         </a>
         <nav>
-          <Link className={styles.navBtn} href="#">
+          <Link className={styles.navBtn} href="/">
             <HomeOutlinedIcon className={styles.navBtnIcon} />
             <div className={styles.navItemText}>Home</div>
           </Link>

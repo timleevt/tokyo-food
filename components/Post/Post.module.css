@@ -40,3 +40,11 @@
     margin: auto 0px;
     font-size: 13px;
 }
+
+.favorite {
+    margin-left: auto;
+}
+
+.favIcon {
+    color: rgba(224, 7, 7, 1);
+}
