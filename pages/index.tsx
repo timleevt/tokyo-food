@@ -10,23 +10,14 @@ export default function Home() {
   const [selectedPlace, setSelectedPlace] = useState<string | null>(null);
 
   return (
-    <>
-      <main className={styles.main}>
-        {/* <Header /> */}
-        <div className={styles.contentContainer}>
-          <SearchBar changeHandler={setPostFilterText} />
-          <PostContainer filterText={postFilterText} />
-        </div>
-        <div className={styles.mapContainer}>
-          {/* <Map currentLoc={selectedPlace}/> */}
-          map here
-        </div>
-      </main>
-      <footer className={styles.footer}>
-        <Link className={styles.footerLink} href="/about">
-          about
-        </Link>
-      </footer>
-    </>
+    <main className={styles.main}>
+      <div className={styles.contentContainer}>
+        <SearchBar changeHandler={setPostFilterText} />
+        <PostContainer filterText={postFilterText} />
+      </div>
+      <div className={styles.mapContainer}>
+        <Map currentLoc={selectedPlace} />
+      </div>
+    </main>
   );
 }

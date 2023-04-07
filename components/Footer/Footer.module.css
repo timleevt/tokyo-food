@@ -1,0 +1,26 @@
+.footer {
+  position: fixed;
+  font-size: 16px;
+  bottom: 0;
+  width: 100%;
+  border-top: 1px solid #d3d3d3;
+  text-align: center;
+  z-index: 1;
+  background-color: white;
+  padding: 6px 0px;
+}
+
+.footerLink {
+  text-decoration: none;
+  color: black;
+}
+
+.footerLink:visited {
+  color: black;
+}
+
+@media screen and (max-width: 660px) {
+  .footer {
+    display: none;
+  }
+}

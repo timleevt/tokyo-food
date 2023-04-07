@@ -1,5 +1,5 @@
 import Link from "next/link";
-import styles from "./Header.module.css";
+import styles from "./Navbar.module.css";
 import { useState } from "react";
 import Modal from "../Modal/Modal";
 import PostForm from "../PostForm/PostForm";
@@ -10,7 +10,7 @@ import LogoutOutlinedIcon from "@mui/icons-material/LogoutOutlined";
 import ApprovalOutlinedIcon from "@mui/icons-material/ApprovalOutlined";
 import AddIcon from "@mui/icons-material/Add";
 
-const Header = () => {
+const Navbar = () => {
   // TODO: Handle Signin/Login feature
   const [signedIn, setSignedIn] = useState(false);
   const [showPostModal, setShowPostModal] = useState(false);
@@ -83,4 +83,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default Navbar;

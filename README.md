@@ -7,11 +7,10 @@ npm run dev
 ```
 
 TODO:
-- fix layout. messed up everything after i extracted header out
-- change navbar so it appears as part of the layout
+- set map to location on click
+- get name of place when posting
 - mobile navbar (at bottom)
 - sanitize post input (both on front and backend)
-- set map to location on click
 - about/faq page
 - user signup
 - user profile -> just show user's post history

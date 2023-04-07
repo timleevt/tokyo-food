@@ -1,9 +1,7 @@
 .header {
-  position:fixed;
   margin: 20px;
   margin-top: 40px;
   margin-left: 10%;
-  /* border: 1px solid black; */
   font-family: "Poppins", "Helvetica Neue", Helvetica, Arial, sans-serif;
   display: flex;
   gap: 16px;

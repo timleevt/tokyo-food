@@ -1,58 +1,9 @@
 .main {
-  /* display: flex; */
-  /* display: grid;
-  grid-template-columns: 15% 45% 40%; */
-  width: 60vw;
-  margin: 0px auto 0px auto;
+  display: flex;
 }
 
-@media screen and (max-width: 1280px) {
-  .main {
-    grid-template-columns: 12% 48% 50%;
-  }
-}
+
 
 .contentContainer {
   margin: 20px;
-}
-
-@media screen and (max-width: 860px) {
-  .main {
-    width: 80vw;
-    grid-template-columns: 10% 90%;
-  }
-  .mapContainer {
-    display: none;
-  }
-}
-
-@media screen and (max-width: 660px) {
-  .main {
-    width: 100vw;
-    grid-template-columns: 95%;
-  }
-  .footer {
-    display: none;
-  }
-}
-
-.footer {
-  position: fixed;
-  font-size: 16px;
-  bottom: 0;
-  width: 100%;
-  border-top: 1px solid #d3d3d3;
-  text-align: center;
-  z-index: 1;
-  background-color: white;
-  padding: 6px 0px;
-}
-
-.footerLink {
-  text-decoration: none;
-  color: black;
-}
-
-.footerLink:visited {
-  color: black;
 }

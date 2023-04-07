@@ -12,13 +12,14 @@ type Props = {
 const PostContainer = ({ filterText }: Props) => {
   const [reviews, setReviews] = useState<PostData[] | null>(null);
 
-  const retrieveReviews = async () => {
-    const reviews = await getReviews();
-    setReviews(reviews);
-  };
-
+  // Fetch review data to display
   useEffect(() => {
-    retrieveReviews();
+    const retrieveReviews = async () => {
+      const data = await getReviews();
+      setReviews(data);
+    };
+
+    retrieveReviews().catch(console.error);
   }, []);
 
   // Filter data based on search bar text
@@ -31,8 +32,12 @@ const PostContainer = ({ filterText }: Props) => {
     );
   });
 
-  if(!filteredData) {
-    return <div>no items found!</div>
+  if(!reviews) {
+    return <div>loading!</div>;
+  }
+
+  if (!filteredData) {
+    return <div>no items found!</div>;
   }
   return (
     <>
