@@ -7,9 +7,10 @@ import { PostData } from "@/apis/reviews/getReviews";
 
 type Props = {
   filterText: string;
+  onClick: (test: string) => void;
 };
 
-const PostContainer = ({ filterText }: Props) => {
+const PostContainer = ({ filterText, onClick }: Props) => {
   const [reviews, setReviews] = useState<PostData[] | null>(null);
 
   // Fetch review data to display
@@ -51,6 +52,7 @@ const PostContainer = ({ filterText }: Props) => {
               address={i.address}
               fave={i.favorited}
               comment={i.review}
+              handleClick={onClick}
             />
           );
         })}

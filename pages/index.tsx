@@ -2,7 +2,6 @@ import styles from "@/styles/Home.module.css";
 import SearchBar from "@/components/SearchBar/SearchBar";
 import PostContainer from "@/containers/PostContainer/PostContainer";
 import Map from "@/components/Map/Map";
-import Link from "next/link";
 import { useState } from "react";
 
 export default function Home() {
@@ -13,11 +12,9 @@ export default function Home() {
     <main className={styles.main}>
       <div className={styles.contentContainer}>
         <SearchBar changeHandler={setPostFilterText} />
-        <PostContainer filterText={postFilterText} />
+        <PostContainer filterText={postFilterText} onClick={setSelectedPlace}/>
       </div>
-      <div className={styles.mapContainer}>
-        <Map currentLoc={selectedPlace} />
-      </div>
+      <Map currentLoc={selectedPlace} />
     </main>
   );
 }

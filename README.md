@@ -8,9 +8,11 @@ npm run dev
 
 TODO:
 - set map to location on click
-- get name of place when posting
+- display location details
+- get name of place when posting - refine this later
 - mobile navbar (at bottom)
 - sanitize post input (both on front and backend)
+- refresh on post
 - about/faq page
 - user signup
 - user profile -> just show user's post history

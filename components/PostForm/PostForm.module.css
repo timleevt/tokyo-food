@@ -48,3 +48,8 @@
   background-color: rgb(249, 24, 128, 0.1);
   border-radius: 50%;
 }
+
+.errorMsg {
+  color: red;
+  text-align: center;
+}

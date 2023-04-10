@@ -1,8 +1,8 @@
 .main {
-  display: flex;
+  /* display: flex; */
+  display: grid;
+  grid-template-columns: 60% 40%;
 }
-
-
 
 .contentContainer {
   margin: 20px;

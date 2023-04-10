@@ -20,7 +20,7 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <ThemeProvider theme={theme}>
       <Head>
-        <title>TB</title>
+        <title>Tokyo Foods</title>
         <meta name="description" content="Food recommendations by locals" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
@@ -29,7 +29,7 @@ export default function App({ Component, pageProps }: AppProps) {
         <Navbar />
         <Component {...pageProps} />
       </div>
-      <Footer />
+      {/* <Footer /> */}
     </ThemeProvider>
   );
 }

@@ -18,6 +18,7 @@ const PostForm = ({ handleClose }: Props) => {
   const GOOGLE_MAPS_API_KEY = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY;
   const [isFavorited, setIsFavorited] = useState(false);
   const [loadingPost, setIsLoadingPost] = useState(false);
+  const [errorMsg, setErrorMsg] = useState("");
   const { register, handleSubmit } = useForm<Data>();
 
   const schema = useMemo(
@@ -42,12 +43,16 @@ const PostForm = ({ handleClose }: Props) => {
 
     try {
       await postReview(reviewData);
-      return;
+      handleClose(false);
     } catch (e) {
-      console.log("handle error");
+      if (typeof e === "string") {
+        setErrorMsg(e);
+      } else if (e instanceof Error) {
+        setErrorMsg(e.message);
+      }
     } finally {
       setIsLoadingPost(false);
-      handleClose(false);
+      // handleClose(false);
     }
   };
 
@@ -63,7 +68,7 @@ const PostForm = ({ handleClose }: Props) => {
           className={styles.closeBtn}
         />
       </div>
-      <Autocomplete>
+      <Autocomplete restrictions={{ country: 'JP'}} types={['bar', 'bakery', 'cafe', 'food']}>
         <TextField fullWidth {...register("address")}></TextField>
       </Autocomplete>
       <TextField
@@ -90,6 +95,7 @@ const PostForm = ({ handleClose }: Props) => {
         </Button>
       </div>
       {loadingPost && <div>loading...</div>}
+      {errorMsg && <div className={styles.errorMsg}>{errorMsg}</div>}
     </form>
   );
 };
