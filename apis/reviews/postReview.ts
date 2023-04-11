@@ -19,7 +19,6 @@ const postReview = async (data: PostReview): Promise<void> => {
 
   // Extract place name from address
   const placeName = dataArray[0];
-  console.log(dataArray[3]);
   // Check to make sure location is in Tokyo
   // if(dataArray[3].trim() !== "Tokyo" || dataArray[4].trim() !== "Japan") {
   //   throw Error('Error: Location is not in Tokyo!');

@@ -1,50 +1,61 @@
 .container {
-    border: 1px solid #d3d3d3;
-    border-bottom: 0px;
-    box-shadow: 0 0px 9px -12px rgba(0,0,0,.2);
-    padding: 8px;
-    font-family: 'Open Sans','Helvetica Neue',Helvetica,Arial,sans-serif;
+  border: 1px solid #d3d3d3;
+  border-bottom: 0px;
+  box-shadow: 0 0px 9px -12px rgba(0, 0, 0, 0.2);
+  padding: 8px;
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 .container:last-child {
-    border-bottom: 1px solid #d3d3d3;
+  border-bottom: 1px solid #d3d3d3;
 }
 
 .container:hover {
-    background-color: rgb(247, 249, 249);
+  background-color: rgb(247, 249, 249);
 }
 
 .header {
-    display: flex;
-    gap: 8px;
+  display: flex;
+  gap: 8px;
 }
 
 .name {
-    font-weight: 700;
-    font-size: 22px;
+  font-weight: 700;
+  font-size: 22px;
+}
+
+@media screen and (max-width: 1280px) {
+    .name {
+        font-size: 18px;
+    }
+}
+
+@media screen and (max-width: 860px) {
+}
+
+@media screen and (max-width: 660px) {
 }
 
 .date {
-    display: block;
-    margin: auto 0px;
-    font-size: 16px;
+  display: block;
+  margin: auto 0px;
+  font-size: 16px;
 }
 
 .addressContainer {
-    display: flex;
+  display: flex;
 }
 
-
 .address {
-    display: block;
-    margin: auto 0px;
-    font-size: 13px;
+  display: block;
+  margin: auto 0px;
+  font-size: 13px;
 }
 
 .favorite {
-    margin-left: auto;
+  margin-left: auto;
 }
 
 .favIcon {
-    color: rgba(224, 7, 7, 1);
+  color: rgba(224, 7, 7, 1);
 }

@@ -9,16 +9,23 @@ import LoginOutlinedIcon from "@mui/icons-material/LoginOutlined";
 import LogoutOutlinedIcon from "@mui/icons-material/LogoutOutlined";
 import ApprovalOutlinedIcon from "@mui/icons-material/ApprovalOutlined";
 import AddIcon from "@mui/icons-material/Add";
+import SignupForm from "../SignupForm/SignupForm";
 
 const Navbar = () => {
   // TODO: Handle Signin/Login feature
   const [signedIn, setSignedIn] = useState(false);
   const [showPostModal, setShowPostModal] = useState(false);
+  const [showSignupModal, setShowSignupModal] = useState(false);
   return (
     <>
       {showPostModal && (
         <Modal>
           <PostForm handleClose={setShowPostModal}></PostForm>
+        </Modal>
+      )}
+      {showSignupModal && (
+        <Modal>
+          <SignupForm handleClose={setShowSignupModal}></SignupForm>
         </Modal>
       )}
       <header className={styles.header}>
@@ -59,7 +66,6 @@ const Navbar = () => {
                   </div>
                 </a>
               </div>
-              {/* </a> */}
             </>
           ) : (
             <>
@@ -71,9 +77,13 @@ const Navbar = () => {
                 <LoginOutlinedIcon className={styles.navBtnIcon} />
                 <div className={styles.navItemText}>Login</div>
               </a>
-              <a className={styles.navBtn} href="#">
+              <a
+                className={styles.navBtn}
+                href="#"
+                onClick={() => setShowSignupModal(true)}
+              >
                 <ApprovalOutlinedIcon className={styles.navBtnIcon} />
-                <div className={styles.navItemText}>Apply</div>
+                <div className={styles.navItemText}>SignUp</div>
               </a>
             </>
           )}

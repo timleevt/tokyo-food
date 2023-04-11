@@ -13,14 +13,16 @@
 
 @media screen and (max-width: 860px) {
   .page-content {
-    width: 80vw;
-    grid-template-columns: 10% 90%;
+    width: 80%;
+    display: flex;
   }
 }
 
 @media screen and (max-width: 660px) {
-  .main {
-    width: 100vw;
-    grid-template-columns: 95%;
+  .page-content {
+    width: 100%;
   }
+  /* .main {
+    width: 100vw;
+  } */
 }

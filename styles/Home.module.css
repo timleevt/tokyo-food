@@ -1,9 +1,16 @@
 .main {
-  /* display: flex; */
   display: grid;
   grid-template-columns: 60% 40%;
 }
 
 .contentContainer {
   margin: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+@media screen and (max-width: 660px) {
+  .main {
+    display: flex;
+  }
 }

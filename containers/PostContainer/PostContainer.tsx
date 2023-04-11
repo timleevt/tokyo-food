@@ -1,13 +1,17 @@
 import Post from "@/components/Post/Post";
 import styles from "./PostContainer.module.css";
-// import postdata from "@/constants/postdata";
 import { useEffect, useState } from "react";
 import getReviews from "@/apis/reviews/getReviews";
 import { PostData } from "@/apis/reviews/getReviews";
 
+type locationDetail = {
+  name: string;
+  address: string;
+}
+
 type Props = {
   filterText: string;
-  onClick: (test: string) => void;
+  onClick: (location: locationDetail) => void;
 };
 
 const PostContainer = ({ filterText, onClick }: Props) => {

@@ -9,12 +9,17 @@ type Props = {
   fave?: boolean;
   comment: string;
   pics?: string;
-  handleClick: (test: string) => void;
+  handleClick: (location: locationDetail) => void;
 };
+
+type locationDetail = {
+  name: string;
+  address: string;
+}
 
 const Post = ({ name, date, address, fave, comment, pics, handleClick }: Props) => {
   return (
-    <div className={styles.container} onClick={() => handleClick(name)}>
+    <div className={styles.container} onClick={() => handleClick({name, address})}>
       <div className={styles.header}>
         <span className={styles.name}>{name}</span>
         <span className={styles.date}>

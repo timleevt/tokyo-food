@@ -1,18 +1,32 @@
 import client from "../client";
 
-// export type PostData = {
-//     id: number,
-//     name: string,
-//     address: string,
-//     date: string,
-//     favorited: boolean,
-//     authorUsername: string,
-//     review: string
-// }
+type Coordinates = {
+  lat: number;
+  lng: number;
+}
 
-// Fix typing later
-const getPlaceDetails = async (): Promise<any> => {
-  const response = await client.get(`/place`);
+type PlaceDetails = {
+  formatted_address: string;
+  geometry: {
+    location: Coordinates;
+    viewport: {
+      northeast: Coordinates;
+      southwest: Coordinates;
+    }
+  };
+  name: string;
+  price_level: number;
+  rating: number;
+
+}
+
+const getPlaceDetails = async (address: string): Promise<PlaceDetails> => {
+  const response = await client.get(`/place`, {
+    params: {
+      address,
+    },
+  });
+
   return response.data.candidates[0];
 };
 export default getPlaceDetails;
