@@ -1,6 +1,6 @@
 import Link from "next/link";
 import styles from "./Navbar.module.css";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import Modal from "../Modal/Modal";
 import PostForm from "../PostForm/PostForm";
 import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
@@ -10,12 +10,15 @@ import LogoutOutlinedIcon from "@mui/icons-material/LogoutOutlined";
 import ApprovalOutlinedIcon from "@mui/icons-material/ApprovalOutlined";
 import AddIcon from "@mui/icons-material/Add";
 import SignupForm from "../SignupForm/SignupForm";
+import LoginForm from "../LoginForm/LoginForm";
+import { UserContext } from "@/context/UserContext";
 
 const Navbar = () => {
-  // TODO: Handle Signin/Login feature
   const [signedIn, setSignedIn] = useState(false);
   const [showPostModal, setShowPostModal] = useState(false);
   const [showSignupModal, setShowSignupModal] = useState(false);
+  const [showLoginModal, setShowLoginModal] = useState(false);
+  const msg = useContext(UserContext); // just for testing
   return (
     <>
       {showPostModal && (
@@ -28,9 +31,15 @@ const Navbar = () => {
           <SignupForm handleClose={setShowSignupModal}></SignupForm>
         </Modal>
       )}
+      {showLoginModal && (
+        <Modal>
+          <LoginForm handleClose={setShowLoginModal}></LoginForm>
+        </Modal>
+      )}
       <header className={styles.header}>
         <a className={styles.logoLink} href="#">
           <div className={styles.logo}></div>
+          <div>{msg}</div>
         </a>
         <nav>
           <Link className={styles.navBtn} href="/">
@@ -72,7 +81,7 @@ const Navbar = () => {
               <a
                 className={styles.navBtn}
                 href="#"
-                onClick={() => setSignedIn(true)}
+                onClick={() => setShowLoginModal(true)}
               >
                 <LoginOutlinedIcon className={styles.navBtnIcon} />
                 <div className={styles.navItemText}>Login</div>

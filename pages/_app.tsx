@@ -4,6 +4,7 @@ import { createTheme, ThemeProvider } from "@mui/material/styles";
 import Navbar from "@/components/Navbar/Navbar";
 import Head from "next/head";
 import Footer from "@/components/Footer/Footer";
+import { UserContext } from "@/context/UserContext";
 
 const theme = createTheme({
   palette: {
@@ -26,8 +27,10 @@ export default function App({ Component, pageProps }: AppProps) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className="page-content">
-        <Navbar />
-        <Component {...pageProps} />
+        <UserContext.Provider value="hello from context">
+          <Navbar />
+          <Component {...pageProps} />
+        </UserContext.Provider>
       </div>
       {/* <Footer /> */}
     </ThemeProvider>

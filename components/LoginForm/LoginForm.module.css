@@ -1,0 +1,21 @@
+.container {
+  background-color: white;
+  width: 300px;
+  padding: 12px 0px;
+  margin: auto;
+  margin-top: 10%;
+  display: flex;
+  flex-direction: column;
+  border-radius: 6px;
+}
+
+.formContents {
+  padding: 20px;
+  display: block;
+  margin: 0px auto;
+}
+
+.closeBtn {
+  padding: 3px;
+  border: 1px transparent;
+}
