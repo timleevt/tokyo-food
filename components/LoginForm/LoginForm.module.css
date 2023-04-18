@@ -19,3 +19,8 @@
   padding: 3px;
   border: 1px transparent;
 }
+
+.loginBtn {
+  display: block;
+  margin: auto;
+}

@@ -1,10 +1,11 @@
 import "@/styles/globals.css";
 import type { AppProps } from "next/app";
+import { useState } from "react";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import Navbar from "@/components/Navbar/Navbar";
 import Head from "next/head";
 import Footer from "@/components/Footer/Footer";
-import { UserContext } from "@/context/UserContext";
+import { AuthContext } from "@/context/AuthContext";
 
 const theme = createTheme({
   palette: {
@@ -18,6 +19,7 @@ const theme = createTheme({
 });
 
 export default function App({ Component, pageProps }: AppProps) {
+  const [authenticated, setAuthenticated] = useState(false);
   return (
     <ThemeProvider theme={theme}>
       <Head>
@@ -27,10 +29,10 @@ export default function App({ Component, pageProps }: AppProps) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className="page-content">
-        <UserContext.Provider value="hello from context">
+        <AuthContext.Provider value={{authenticated, setAuthenticated}}>
           <Navbar />
           <Component {...pageProps} />
-        </UserContext.Provider>
+        </AuthContext.Provider>
       </div>
       {/* <Footer /> */}
     </ThemeProvider>

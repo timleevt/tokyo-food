@@ -11,14 +11,13 @@ import ApprovalOutlinedIcon from "@mui/icons-material/ApprovalOutlined";
 import AddIcon from "@mui/icons-material/Add";
 import SignupForm from "../SignupForm/SignupForm";
 import LoginForm from "../LoginForm/LoginForm";
-import { UserContext } from "@/context/UserContext";
+import AuthContext from "@/context/AuthContext";
 
 const Navbar = () => {
-  const [signedIn, setSignedIn] = useState(false);
   const [showPostModal, setShowPostModal] = useState(false);
   const [showSignupModal, setShowSignupModal] = useState(false);
   const [showLoginModal, setShowLoginModal] = useState(false);
-  const msg = useContext(UserContext); // just for testing
+  const { authenticated, setAuthenticated } = useContext(AuthContext);
   return (
     <>
       {showPostModal && (
@@ -39,14 +38,13 @@ const Navbar = () => {
       <header className={styles.header}>
         <a className={styles.logoLink} href="#">
           <div className={styles.logo}></div>
-          <div>{msg}</div>
         </a>
         <nav>
           <Link className={styles.navBtn} href="/">
             <HomeOutlinedIcon className={styles.navBtnIcon} />
             <div className={styles.navItemText}>Home</div>
           </Link>
-          {signedIn ? (
+          {authenticated ? (
             <>
               <a className={styles.navBtn} href="#">
                 <AccountBoxOutlinedIcon className={styles.navBtnIcon} />
@@ -55,12 +53,11 @@ const Navbar = () => {
               <a
                 className={styles.navBtn}
                 href="#"
-                onClick={() => setSignedIn(false)}
+                onClick={() => setAuthenticated(false)}
               >
                 <LogoutOutlinedIcon className={styles.navBtnIcon} />
                 <div className={styles.navItemText}>Logout</div>
               </a>
-              {/* <a href="#"> */}
               <div
                 className={styles.postBtn}
                 onClick={() => setShowPostModal(true)}
