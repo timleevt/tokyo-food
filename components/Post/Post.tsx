@@ -3,6 +3,7 @@ import styles from "./Post.module.css";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 
 type Props = {
+  username: string;
   name: string;
   date: string;
   address: string;
@@ -15,11 +16,24 @@ type Props = {
 type locationDetail = {
   name: string;
   address: string;
-}
+};
 
-const Post = ({ name, date, address, fave, comment, pics, handleClick }: Props) => {
+const Post = ({
+  username,
+  name,
+  date,
+  address,
+  fave,
+  comment,
+  pics,
+  handleClick,
+}: Props) => {
   return (
-    <div className={styles.container} onClick={() => handleClick({name, address})}>
+    <div
+      className={styles.container}
+      onClick={() => handleClick({ name, address })}
+    >
+      <div className={styles.userProfile}>@{username}</div>
       <div className={styles.header}>
         <span className={styles.name}>{name}</span>
         <span className={styles.date}>

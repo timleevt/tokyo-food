@@ -4,7 +4,7 @@ type PostUserLogin = {
   username: string;
   password: string;
 };
-const postUserLogin = async (data: PostUserLogin): Promise<void> => {
+const postUserLogin = async (data: PostUserLogin) => {
   return await client.post("/users/login", data);
 };
 

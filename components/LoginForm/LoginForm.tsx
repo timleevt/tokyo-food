@@ -13,6 +13,7 @@ type Props = {
 
 const LoginForm = ({ handleClose }: Props) => {
   const [showPassword, setShowpassword] = useState(false);
+  const [errorMsg, setErrorMsg] = useState("");
   const { register, handleSubmit } = useForm<Data>();
   const { setAuthenticated } = useContext(AuthContext);
 
@@ -27,10 +28,15 @@ const LoginForm = ({ handleClose }: Props) => {
   type Data = yup.InferType<typeof schema>;
 
   const onSubmit = async (data: Data) => {
-    // const res = await postUserLogin(data);
-    // console.log(res);
-    setAuthenticated(true);
-    handleClose(false);
+    try {
+      const res = await postUserLogin(data);
+      if (res.status === 200) {
+        setAuthenticated(true);
+        handleClose(false);
+      }
+    } catch (e) {
+      setErrorMsg("login failed");
+    }
   };
 
   return (
@@ -57,6 +63,7 @@ const LoginForm = ({ handleClose }: Props) => {
         <Button className={styles.loginBtn} variant="contained" type="submit">
           Login
         </Button>
+        {errorMsg}
       </div>
     </form>
   );

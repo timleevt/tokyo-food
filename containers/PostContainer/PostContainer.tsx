@@ -51,6 +51,7 @@ const PostContainer = ({ filterText, onClick }: Props) => {
           return (
             <Post
               key={`${index}_${i.name}_${i.date}`}
+              username={i.authorUsername}
               name={i.name}
               date={i.date}
               address={i.address}
