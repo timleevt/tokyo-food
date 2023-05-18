@@ -11,8 +11,10 @@
 
 .formContents {
   padding: 20px;
-  display: block;
-  margin: 0px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
 }
 
 .signupBtn {
@@ -23,10 +25,34 @@
 .closeBtn {
   padding: 3px;
   border: 1px transparent;
+  margin-left: 12px;
 }
 
 .closeBtn:hover {
   cursor: pointer;
   background-color: rgb(0, 0, 0, 0.1);
   border-radius: 50%;
+}
+
+.header {
+  margin: 0px;
+  text-align: center;
+}
+
+/* Success Modal */
+.successContainer {
+  background-color: white;
+  width: 300px;
+  padding: 12px 0px;
+  margin: auto;
+  margin-top: 10%;
+  display: flex;
+  flex-direction: column;
+  border-radius: 6px;
+  text-align: center;
+}
+
+.successLoadImg {
+  display: block;
+  margin: 0px auto;
 }

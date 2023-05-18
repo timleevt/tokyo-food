@@ -46,14 +46,9 @@ const LoginForm = ({ handleClose }: Props) => {
         className={styles.closeBtn}
       />
       <div className={styles.formContents}>
-        <InputLabel shrink htmlFor="user">
-          Username
-        </InputLabel>
-        <TextField id="user" required size="small" {...register("username")} />
-        <InputLabel shrink htmlFor="password">
-          Password
-        </InputLabel>
+        <TextField label="Username" id="user" required size="small" margin="dense" {...register("username")} />
         <TextField
+          label="Password"
           id="password"
           required
           type={showPassword ? "text" : "password"}

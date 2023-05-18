@@ -34,6 +34,8 @@ const PostForm = ({ handleClose }: Props) => {
 
   const onSubmit = async (data: Data) => {
     setIsLoadingPost(true);
+    // TODO: Update name so that addresses that are differently formatted still post correctly
+    // TODO: Update username so that proper username is passed as poster
     let reviewData = {
       name: "testname",
       isFavorited,

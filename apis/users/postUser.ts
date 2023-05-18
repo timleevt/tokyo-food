@@ -6,7 +6,7 @@ type PostUser = {
   email: string;
   isLocal: boolean;
 };
-const postUser = async (data: PostUser): Promise<void> => {
+const postUser = async (data: PostUser): Promise<Response> => {
     return await client.post("/users", data);
 };
 

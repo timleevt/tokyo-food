@@ -89,7 +89,7 @@ const Navbar = () => {
                 onClick={() => setShowSignupModal(true)}
               >
                 <ApprovalOutlinedIcon className={styles.navBtnIcon} />
-                <div className={styles.navItemText}>SignUp</div>
+                <div className={styles.navItemText}>SignUp</div> 
               </a>
             </>
           )}
